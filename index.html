@@ -21,6 +21,14 @@
 
 <body>
     <div class="body">
+        <div class="clickMe">
+            <div onclick="showMain(this)">
+                <p>Кликни</p>
+                <img src="./images/logo-small.png" alt="">
+                <p>Меня</p>
+            </div>
+        </div>
+
         <div class="" id="mainOKLICK">
             <div class="metaOKLICK">
                 <p>Метавселенная</p>
@@ -64,6 +72,29 @@
             </div>
         </div>
 
+        <div class="footer footerMain">
+            <div class="line"></div>
+            <div class="footerInside">
+                <div>
+                    <a href="./">Правила</a>
+                    <a href="./">Главная</a>
+                    <a href="./">Оклик</a>
+                    <a href="./">Контакты</a>
+                </div>
+                <div>
+                    <a href="./">
+                        <img src="./images/icon/i.png" alt="">
+                    </a>
+                    <a href="./">
+                        <img src="./images/icon/t.png" alt="">
+                    </a>
+                    <a href="./">
+                        <img src="./images/icon/y.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <div class="stars">
             <div id="stars"></div>
             <div id="stars2"></div>
@@ -72,16 +103,17 @@
     </div>
 
     <script>
-        let showMain = () => {
-            setTimeout(() => {
-                let main = document.querySelector('#mainOKLICK')
+        let showMain = (element) => {
+            if (!(document.readyState === "complete" || document.readyState === "loaded")) {
+                return;
+            }
 
-                main.classList = 'mainOKLICK'
-            }, 100);
+            element.closest('div.clickMe').remove();
+
+            let main = document.querySelector('#mainOKLICK');
+
+            main.classList = 'mainOKLICK';
         }
-        document.addEventListener('DOMContentLoaded', function () {
-            showMain()
-        });
     </script>
 </body>
 
