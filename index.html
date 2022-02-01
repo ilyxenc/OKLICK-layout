@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Метавселенная OKLICK</title>
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Language" content="ru">
+    <meta name="generator" content="N/A">
+    <meta name="language" content="Russian">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <link type="text/css" rel="stylesheet" href="./fonts/fonts.css">
+    <link type="text/css" rel="stylesheet" href="./css/index.css">
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
+</head>
+
+<body>
+    <div class="body">
+        <div class="" id="mainOKLICK">
+            <div class="metaOKLICK">
+                <p>Метавселенная</p>
+                <img src="./images/logo.png" alt="">
+
+                <a class="planet planet1" href="./">
+                    <div class="text">
+                        <p>8 МАРТА</p>
+                        <p>Ввод добро</p>
+                        <div></div>
+                    </div>
+
+                    <img src="./images/p-2.png" alt="" class="planetImg">
+                    <img src="./images/p-2-bg-1.png" alt="" class="planetImgBg1">
+                    <img src="./images/p-2-bg-2.png" alt="" class="planetImgBg2">
+                </a>
+
+                <a class="planet planet2" href="./">
+                    <div class="text">
+                        <p>23 ФЕВРАЛЯ</p>
+                        <p>Чувствительные мужчины</p>
+                        <div></div>
+                    </div>
+
+                    <img src="./images/p-3.png" alt="" class="planetImg">
+                    <img src="./images/p-3-bg-1.png" alt="" class="planetImgBg1">
+                    <img src="./images/p-3-bg-2.png" alt="" class="planetImgBg2">
+                </a>
+
+                <a class="planet planet3" href="./">
+                    <div class="text">
+                        <p>14 ФЕВРАЛЯ</p>
+                        <p>Хочу услышать..<br />Три главных “колла”</p>
+                        <div></div>
+                    </div>
+
+                    <img src="./images/p-1.png" alt="" class="planetImg">
+                    <img src="./images/p-1-bg-1.png" alt="" class="planetImgBg1">
+                    <img src="./images/p-1-bg-2.png" alt="" class="planetImgBg2">
+                </a>
+            </div>
+        </div>
+
+        <div class="stars">
+            <div id="stars"></div>
+            <div id="stars2"></div>
+            <div id="stars3"></div>
+        </div>
+    </div>
+
+    <script>
+        let showMain = () => {
+            setTimeout(() => {
+                let main = document.querySelector('#mainOKLICK')
+
+                main.classList = 'mainOKLICK'
+            }, 100);
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            showMain()
+        });
+    </script>
+</body>
+
+</html>

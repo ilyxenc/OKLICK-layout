@@ -1,0 +1,390 @@
+$device-width: 2560
+$device-widthpx: 2560px
+
+$first-duration: 1s
+$second-duration: 2s
+$first-delay: calc(#{$first-duration} * 0.75)
+
+*
+    padding: 0
+    margin: 0
+    color: #FFFFFF
+    font-family: 'Roboto Mono', Arial, Helvetica, sans-serif
+    font-style: normal
+
+html::-webkit-scrollbar
+    display: none
+
+html
+    -ms-overflow-style: none
+    scrollbar-width: none
+
+body
+    background: radial-gradient(50% 50% at 50% 50%, #0053A5 0%, #002549 67.71%, #000000 100%)
+    position: relative
+    min-height: 100vh
+    min-width: 320px
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: antialiased
+    // font-smoothing: antialiased
+    overflow: hidden
+    overflow-x: hidden !important
+    overflow-y: scroll
+
+.body
+    width: 100%
+    overflow: hidden
+    min-height: 100vh
+
+@function multiple-box-shadow ($n)
+    $value: '#{random($device-width)}px #{random($device-width)}px #FFF'
+    @for $i from 2 through $n
+        $value: '#{$value} , #{random($device-width)}px #{random($device-width)}px #FFF'
+
+    @return unquote($value)
+
+$shadows-small: multiple-box-shadow(700)
+$shadows-medium: multiple-box-shadow(200)
+$shadows-big: multiple-box-shadow(100)
+
+#stars
+    width: 1px
+    height: 1px
+    border-radius: 100%
+    background: transparent
+    box-shadow: $shadows-small
+    animation: animStar 50s linear infinite
+
+    &:after
+        content: " "
+        position: absolute
+        top: $device-widthpx
+        width: 1px
+        height: 1px
+        border-radius: 100%
+        background: transparent
+        box-shadow: $shadows-small
+
+#stars2
+    width: 2px
+    height: 2px
+    border-radius: 100%
+    background: transparent
+    box-shadow: $shadows-medium
+    animation: animStar 100s linear infinite
+
+    &:after
+        content: " "
+        position: absolute
+        top: $device-widthpx
+        width: 2px
+        height: 2px
+        border-radius: 100%
+        background: transparent
+        box-shadow: $shadows-medium
+
+#stars3
+    width: 3px
+    height: 3px
+    border-radius: 100%
+    background: transparent
+    box-shadow: $shadows-big
+    animation: animStar 150s linear infinite
+
+    &:after
+        content: " "
+        position: absolute
+        top: $device-widthpx
+        width: 3px
+        height: 3px
+        border-radius: 100%
+        background: transparent
+        box-shadow: $shadows-big
+
+.stars
+    position: absolute
+    width: 100%
+    height: 100vh
+    top: 0
+    left: 0
+    margin: 0
+    z-index: -1
+    overflow: hidden
+
+@keyframes animStar
+    from
+        transform: translateY(0px)
+    to
+        transform: translateY(-$device-widthpx)
+
+#mainOKLICK
+    display: none
+
+.mainOKLICK
+    width: 100%
+    min-height: 100vh
+    position: relative
+    top: 0
+    left: 0
+    display: flex !important
+    justify-content: center
+    align-items: center
+
+.metaOKLICK
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    opacity: 0
+    animation: zoomInUp $first-duration
+    animation-fill-mode: forwards
+
+    p
+        font-size: calc(100vw / 48)
+        font-weight: 400
+        line-height: calc(100vw / 36.2)
+        letter-spacing: 0.1em
+        text-align: left
+        text-transform: uppercase
+        padding-bottom: calc(100vw / 80)
+        margin: 0
+        position: relative
+        z-index: 2
+
+    img
+        width: 12.1vw
+        height: auto
+        display: block
+        position: relative
+        z-index: 2
+
+@keyframes zoomInUp
+    0%
+        opacity: 0
+        -webkit-transform: scale3d(.1, .1, .1) translate3d(0, 1000px, 0)
+        transform: scale3d(.1, .1, .1) translate3d(0, 1000px, 0)
+        -webkit-animation-timing-function: cubic-bezier(.55, .055, .675, .19)
+        animation-timing-function: cubic-bezier(.55, .055, .675, .19)
+
+    60%
+        opacity: 1
+        -webkit-transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0)
+        transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0)
+        -webkit-animation-timing-function: cubic-bezier(.175, .885, .32, 1)
+        animation-timing-function: cubic-bezier(.175, .885, .32, 1)
+
+    100%
+        opacity: 1
+        -webkit-transform: scale3d(1, 1, 1) translate3d(0, 0, 0)
+        transform: scale3d(1, 1, 1) translate3d(0, 0, 0)
+
+.planet
+    display: flex
+    justify-content: center
+    align-items: center
+    transform: scale(0)
+    z-index: 1
+
+    .planetImg
+        position: relative
+        display: block
+        z-index: 3
+
+    .planetImgBg1
+        z-index: -2
+
+    .planetImgBg2
+        z-index: -1
+        opacity: 0
+
+    .text
+        position: absolute
+        z-index: 4
+        opacity: 0
+
+        p
+            margin: 0
+
+            &:nth-child(1)
+                font-size: 24px
+                font-weight: 700
+                line-height: 32px
+                letter-spacing: 0.1em
+                color: #05B4C9
+                padding-bottom: 12px
+
+            &:nth-child(2)
+                font-size: 14px
+                font-weight: 400
+                line-height: 18px
+                letter-spacing: 0.1em
+
+        div
+            position: absolute
+            width: 40px
+            height: 2px
+            background: #05B4C9
+
+.planet1
+    position: absolute
+    animation: planet1 $second-duration ease-in-out
+    animation-fill-mode: forwards
+
+    .planetImg
+        width: 18vw
+        height: 18vw
+
+    &:hover .planetImgBg1
+        width: 55vw
+        height: 36.25vw
+
+    .planetImgBg1
+        position: absolute
+        width: 50vw
+        height: 31.25vw
+        transition: 0.3s
+
+    .planetImgBg2
+        position: absolute
+        width: 37.5vw
+        height: 25vw
+        right: -19.3vw
+        animation: fadeInBottomRight $first-duration calc(#{$second-duration} * 0.6) forwards
+
+    .text
+        left: -178px
+        top: 10%
+        animation: fadeInBottomRight $first-duration $second-duration forwards
+        text-align: right
+
+        div
+            left: 140px
+            top: 29px
+            transform: rotate(23deg)
+
+@keyframes planet1
+    from
+        transform: rotate(360deg) translate(0px) rotate(-360deg) scale(0)
+    to
+        transform: rotate(0deg) translate(197%) rotate(0deg) scale(1)
+
+.planet2
+    position: absolute
+    animation: planet2 $second-duration ease-in-out
+    animation-fill-mode: forwards
+
+    .planetImg
+        width: 25vw
+        height: 25vw
+
+    &:hover .planetImgBg1
+        width: 64.5vw
+        height: 52.6vw
+
+    .planetImgBg1
+        position: absolute
+        width: 57.5vw
+        height: 45.6vw
+        transition: 0.3s
+
+    .planetImgBg2
+        position: absolute
+        width: 35.6vw
+        height: 35.6vw
+        top: 0.3vw
+        right: 6.3vw
+        animation: fadeInBottomLeft $first-duration calc(#{$second-duration} * 0.6) forwards
+
+    .text
+        right: -252px
+        top: 9%
+        animation: fadeInBottomLeft $first-duration $second-duration forwards
+        text-align: left
+
+        div
+            left: -23%
+            top: 50%
+            transform: rotate(325deg)
+
+@keyframes planet2
+    from
+        transform: rotate(360deg) translate(0px) rotate(-360deg) scale(0)
+    to
+        transform: rotate(0deg) translate(-88%, 87.5%) rotate(0deg) scale(1)
+
+.planet3
+    position: absolute
+    animation: planet3 $second-duration ease-in-out
+    animation-fill-mode: forwards
+
+    .planetImg
+        width: 18vw
+        height: 18vw
+
+    &:hover .planetImgBg1
+        width: 56.3vw
+        height: 47.3vw
+
+    .planetImgBg1
+        position: absolute
+        width: 46.3vw
+        height: 37.3vw
+        transition: 0.3s
+
+    .planetImgBg2
+        position: absolute
+        width: 32.3vw
+        height: 32.3vw
+        top: -12.7vw
+        right: 1.3vw
+        animation: fadeInTopLeft $first-duration calc(#{$second-duration} * 0.6) forwards
+
+    .text
+        right: -266px
+        bottom: 12%
+        animation: fadeInTopLeft $first-duration $second-duration forwards
+        text-align: left
+
+        div
+            left: -31%
+            top: 5%
+            transform: rotate(18deg)
+
+@keyframes planet3
+    from
+        transform: rotate(360deg) translate(0px) rotate(-360deg) scale(0)
+    to
+        transform: rotate(0deg) translate(-205%, -87.5%) rotate(0deg) scale(1)
+
+@keyframes fadeInBottomRight
+    from
+        opacity: 0
+        -webkit-transform: translate3d(100%, 100%, 0)
+        transform: translate3d(100%, 100%, 0)
+
+    to
+        opacity: 1
+        -webkit-transform: translateZ(0)
+        transform: translateZ(0)
+
+@keyframes fadeInBottomLeft
+    from
+        opacity: 0
+        -webkit-transform: translate3d(-100%, 100%, 0)
+        transform: translate3d(-100%, 100%, 0)
+
+    to
+        opacity: 1
+        -webkit-transform: translateZ(0)
+        transform: translateZ(0)
+
+@keyframes fadeInTopLeft
+    from
+        opacity: 0
+        -webkit-transform: translate3d(-100%, -100%, 0)
+        transform: translate3d(-100%, -100%, 0)
+
+    to
+        opacity: 1
+        -webkit-transform: translateZ(0)
+        transform: translateZ(0)
