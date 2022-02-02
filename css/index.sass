@@ -1,6 +1,9 @@
 $device-width: 2560
 $device-widthpx: 2560px
 
+$device-width-mobile: 1200
+$device-widthpx-mobile: 1200px
+
 $first-duration: 1s
 $second-duration: 2s
 $first-delay: calc(#{$first-duration} * 0.75)
@@ -18,6 +21,7 @@ html::-webkit-scrollbar
 html
     -ms-overflow-style: none
     scrollbar-width: none
+    background: #000000
 
 body
     background: radial-gradient(50% 50% at 50% 50%, #0053A5 0%, #002549 67.71%, #000000 100%)
@@ -45,9 +49,20 @@ body
 
     @return unquote($value)
 
+@function multiple-box-shadow-mobile ($n)
+    $value: '#{random($device-width-mobile)}px #{random($device-width-mobile)}px #FFF'
+    @for $i from 2 through $n
+        $value: '#{$value} , #{random($device-width-mobile)}px #{random($device-width-mobile)}px #FFF'
+
+    @return unquote($value)
+
 $shadows-small: multiple-box-shadow(700)
 $shadows-medium: multiple-box-shadow(200)
 $shadows-big: multiple-box-shadow(100)
+
+$shadows-small-mobile: multiple-box-shadow-mobile(700)
+$shadows-medium-mobile: multiple-box-shadow-mobile(200)
+$shadows-big-mobile: multiple-box-shadow-mobile(100)
 
 #stars
     width: 1px
@@ -56,6 +71,10 @@ $shadows-big: multiple-box-shadow(100)
     background: transparent
     box-shadow: $shadows-small
     animation: animStar 50s linear infinite
+
+    @media only screen and (max-width: 868px)
+        box-shadow: $shadows-small-mobile
+        animation: animStarMobile 50s linear infinite
 
     &:after
         content: " "
@@ -67,6 +86,10 @@ $shadows-big: multiple-box-shadow(100)
         background: transparent
         box-shadow: $shadows-small
 
+        @media only screen and (max-width: 868px)
+            top: $device-widthpx-mobile
+            box-shadow: $shadows-small-mobile
+
 #stars2
     width: 2px
     height: 2px
@@ -74,6 +97,10 @@ $shadows-big: multiple-box-shadow(100)
     background: transparent
     box-shadow: $shadows-medium
     animation: animStar 100s linear infinite
+
+    @media only screen and (max-width: 868px)
+        box-shadow: $shadows-medium-mobile
+        animation: animStarMobile 100s linear infinite
 
     &:after
         content: " "
@@ -85,6 +112,10 @@ $shadows-big: multiple-box-shadow(100)
         background: transparent
         box-shadow: $shadows-medium
 
+        @media only screen and (max-width: 868px)
+            top: $device-widthpx-mobile
+            box-shadow: $shadows-medium-mobile
+
 #stars3
     width: 3px
     height: 3px
@@ -92,6 +123,10 @@ $shadows-big: multiple-box-shadow(100)
     background: transparent
     box-shadow: $shadows-big
     animation: animStar 150s linear infinite
+
+    @media only screen and (max-width: 868px)
+        box-shadow: $shadows-big-mobile
+        animation: animStarMobile 150s linear infinite
 
     &:after
         content: " "
@@ -102,6 +137,10 @@ $shadows-big: multiple-box-shadow(100)
         border-radius: 100%
         background: transparent
         box-shadow: $shadows-big
+
+        @media only screen and (max-width: 868px)
+            top: $device-widthpx-mobile
+            box-shadow: $shadows-big-mobile
 
 .stars
     position: absolute
@@ -118,6 +157,12 @@ $shadows-big: multiple-box-shadow(100)
         transform: translateY(0px)
     to
         transform: translateY(-$device-widthpx)
+
+@keyframes animStarMobile
+    from
+        transform: translateY(0px)
+    to
+        transform: translateY(-$device-widthpx-mobile)
 
 #mainOKLICK
     display: none
@@ -141,10 +186,26 @@ $shadows-big: multiple-box-shadow(100)
         text-align: right
         text-transform: uppercase
 
+        @media only screen and (max-width: 868px)
+            font-size: 28px
+            line-height: 37px
+
+        @media only screen and (max-width: 668px)
+            font-size: 20px
+            line-height: 26px
+
     img
         width: 3.33vw
         height: 3.33vw
         display: block
+
+        @media only screen and (max-width: 868px)
+            width: 52px
+            height: 52px
+
+        @media only screen and (max-width: 668px)
+            width: 36px
+            height: 36px
 
     div
         display: flex
@@ -178,12 +239,28 @@ $shadows-big: multiple-box-shadow(100)
         position: relative
         z-index: 2
 
+        @media only screen and (max-width: 868px)
+            font-size: 28px
+            line-height: 37px
+            padding-bottom: 20px
+        
+        @media only screen and (max-width: 668px)
+            font-size: 20px
+            line-height: 26px
+            padding-bottom: 12px
+
     img
         width: 12.1vw
         height: auto
         display: block
         position: relative
         z-index: 2
+
+        @media only screen and (max-width: 868px)
+            width: 159px
+        
+        @media only screen and (max-width: 668px)
+            width: 110px
 
 @keyframes zoomInUp
     0%
@@ -247,11 +324,33 @@ $shadows-big: multiple-box-shadow(100)
                 letter-spacing: 0.1em
                 padding: 0
 
+            @media only screen and (max-width: 868px)
+                &:nth-child(1)
+                    font-size: 22px
+                    line-height: 29px
+
+                &:nth-child(2)
+                    font-size: 12px
+                    line-height: 16px
+                
+            @media only screen and (max-width: 668px)
+                &:nth-child(1)
+                    font-size: 18px
+                    line-height: 24px
+                    padding-bottom: 8px
+
+                &:nth-child(2)
+                    font-size: 10px
+                    line-height: 13px
+
         div
             position: absolute
             width: 40px
             height: 2px
             background: #05B4C9
+
+            @media only screen and (max-width: 668px)
+                width: 28px
 
 .planet1
     position: absolute
@@ -261,15 +360,37 @@ $shadows-big: multiple-box-shadow(100)
         width: 18vw
         height: 18vw
 
+        @media only screen and (max-width: 868px)
+            width: 320px
+            height: 320px
+
+        @media only screen and (max-width: 668px)
+            width: 160px
+            height: 160px
+
     &:hover .planetImgBg1
         width: 55vw
         height: 36.25vw
+
+        @media only screen and (max-width: 868px)
+            width: 1000px
+        
+        @media only screen and (max-width: 668px)
+            width: 700px
+            height: auto
 
     .planetImgBg1
         position: absolute
         width: 50vw
         height: 31.25vw
         transition: 0.3s
+
+        @media only screen and (max-width: 868px)
+            width: 880px
+            height: auto
+        
+        @media only screen and (max-width: 668px)
+            width: 560px
 
     .planetImgBg2
         position: absolute
@@ -278,25 +399,59 @@ $shadows-big: multiple-box-shadow(100)
         right: -19.3vw
         animation: fadeInBottomRight $first-duration calc(#{$second-duration} * 0.6) forwards
 
+        @media only screen and (max-width: 868px)
+            display: none
+
     .text
         left: -178px
         top: 1.9vw
         animation: fadeInBottomRight $first-duration $second-duration forwards
-        text-align: right
 
         @media only screen and (max-width: 1100px)
             top: -2vw
+        
+        @media only screen and (max-width: 868px)
+            left: -137px
+            top: 1vw
+        
+        @media only screen and (max-width: 668px)
+            left: -127px
+            top: -0.5vw
+
+        p
+            text-align: right !important
 
         div
             left: 140px
             top: 29px
             transform: rotate(23deg)
 
+            @media only screen and (max-width: 868px)
+                left: 125px
+
+            @media only screen and (max-width: 668px)
+                left: 102px
+                top: 24px
+
 @keyframes planet1
     from
         transform: rotate(360deg) translate(0px) rotate(-360deg) scale(0)
     to
         transform: rotate(0deg) translate(197%) rotate(0deg) scale(1)
+
+@media only screen and (max-width: 868px)
+    @keyframes planet1
+        from
+            transform: rotate(360deg) translate(0px) rotate(-360deg) scale(0)
+        to
+            transform: rotate(0deg) translate(120%, -14%) rotate(0deg) scale(1)
+
+@media only screen and (max-width: 668px)
+    @keyframes planet1
+        from
+            transform: rotate(360deg) translate(0px) rotate(-360deg) scale(0)
+        to
+            transform: rotate(0deg) translate(122.5%, -16.2%) rotate(0deg) scale(1)
 
 .planet2
     position: absolute
@@ -305,6 +460,14 @@ $shadows-big: multiple-box-shadow(100)
     .planetImg
         width: 25vw
         height: 25vw
+
+        @media only screen and (max-width: 868px)
+            width: 400px
+            height: 400px
+
+        @media only screen and (max-width: 668px)
+            width: 240px
+            height: 240px
 
     &:hover .planetImgBg1
         width: 64.5vw
@@ -316,6 +479,13 @@ $shadows-big: multiple-box-shadow(100)
         height: 45.6vw
         transition: 0.3s
 
+        @media only screen and (max-width: 868px)
+            width: 961px
+            height: auto
+        
+        @media only screen and (max-width: 668px)
+            width: 672px
+
     .planetImgBg2
         position: absolute
         width: 35.6vw
@@ -324,22 +494,58 @@ $shadows-big: multiple-box-shadow(100)
         right: 6.3vw
         animation: fadeInBottomLeft $first-duration calc(#{$second-duration} * 0.6) forwards
 
+        @media only screen and (max-width: 868px)
+            width: 620px
+            height: auto
+            right: 13.3vw
+
+        @media only screen and (max-width: 668px)
+            display: none
+
     .text
         right: -252px
         top: 1.9vw
         animation: fadeInBottomLeft $first-duration $second-duration forwards
         text-align: left
 
+        @media only screen and (max-width: 868px)
+            right: -231px
+            top: 3vw
+        
+        @media only screen and (max-width: 668px)
+            right: -175px
+            top: 2vw
+
         div
             left: -23%
             top: 50%
             transform: rotate(325deg)
+
+            @media only screen and (max-width: 868px)
+                left: -32%
+            
+            @media only screen and (max-width: 668px)
+                left: -24%
 
 @keyframes planet2
     from
         transform: rotate(360deg) translate(0px) rotate(-360deg) scale(0)
     to
         transform: rotate(0deg) translate(-88%, 87.5%) rotate(0deg) scale(1)
+
+@media only screen and (max-width: 868px)
+    @keyframes planet2
+        from
+            transform: rotate(360deg) translate(0px) rotate(-360deg) scale(0)
+        to
+            transform: rotate(0deg) translate(-23.5%, 87%) rotate(0deg) scale(1)
+    
+@media only screen and (max-width: 668px)
+    @keyframes planet2
+        from
+            transform: rotate(360deg) translate(0px) rotate(-360deg) scale(0)
+        to
+            transform: rotate(0deg) translate(-62.5%, 85%) rotate(0deg) scale(1)
 
 .planet3
     position: absolute
@@ -348,6 +554,14 @@ $shadows-big: multiple-box-shadow(100)
     .planetImg
         width: 18vw
         height: 18vw
+
+        @media only screen and (max-width: 868px)
+            width: 320px
+            height: 320px
+
+        @media only screen and (max-width: 668px)
+            width: 160px
+            height: 160px
 
     &:hover .planetImgBg1
         width: 56.3vw
@@ -359,6 +573,10 @@ $shadows-big: multiple-box-shadow(100)
         height: 37.3vw
         transition: 0.3s
 
+        @media only screen and (max-width: 668px)
+            width: 528px
+            height: auto
+
     .planetImgBg2
         position: absolute
         width: 32.3vw
@@ -367,11 +585,22 @@ $shadows-big: multiple-box-shadow(100)
         right: 1.3vw
         animation: fadeInTopLeft $first-duration calc(#{$second-duration} * 0.6) forwards
 
+        @media only screen and (max-width: 868px)
+            display: none
+
     .text
         right: -266px
         bottom: 2.1vw
         animation: fadeInTopLeft $first-duration $second-duration forwards
         text-align: left
+
+        @media only screen and (max-width: 868px)
+            right: -222px
+            bottom: 3.1vw
+        
+        @media only screen and (max-width: 668px)
+            right: -188px
+            bottom: -2.9vw
 
         div
             left: -31%
@@ -383,6 +612,20 @@ $shadows-big: multiple-box-shadow(100)
         transform: rotate(360deg) translate(0px) rotate(-360deg) scale(0)
     to
         transform: rotate(0deg) translate(-205%, -87.5%) rotate(0deg) scale(1)
+
+@media only screen and (max-width: 868px)
+    @keyframes planet3
+        from
+            transform: rotate(360deg) translate(0px) rotate(-360deg) scale(0)
+        to
+            transform: rotate(0deg) translate(-81.9%, -134.3%) rotate(0deg) scale(1)
+
+@media only screen and (max-width: 668px)
+    @keyframes planet3
+        from
+            transform: rotate(360deg) translate(0px) rotate(-360deg) scale(0)
+        to
+            transform: rotate(0deg) translate(-87.5%, -152.5%) rotate(0deg) scale(1)
 
 @keyframes fadeInBottomRight
     from
@@ -451,6 +694,9 @@ $shadows-big: multiple-box-shadow(100)
     box-sizing: border-box
     padding: 0 60px
 
+    @media only screen and (max-width: 668px)
+        padding: 0 10px
+
     .footerInside
         height: 76px
         width: 100%
@@ -458,11 +704,23 @@ $shadows-big: multiple-box-shadow(100)
         justify-content: space-between
         align-items: center
 
+        @media only screen and (max-width: 668px)
+            height: auto
+            padding: 16px 0
+            gap: 16px
+            flex-direction: column
+
         div
             display: flex
             justify-content: center
             align-items: center
             gap: 20px
+
+            @media only screen and (max-width: 668px)
+                gap: 25px
+
+                &:nth-child(2)
+                    gap: 40px
 
     a
         font-size: 16px
@@ -472,6 +730,13 @@ $shadows-big: multiple-box-shadow(100)
         text-transform: uppercase
         text-decoration: none
         transition: 0.3s
+
+        @media only screen and (max-width: 868px)
+            font-size: 14px
+
+        @media only screen and (max-width: 668px)
+            font-size: 12px
+            line-height: 16px
 
         &:hover
             opacity: 0.7
@@ -485,3 +750,7 @@ $shadows-big: multiple-box-shadow(100)
         width: 28px
         height: 28px
         display: block
+
+        @media only screen and (max-width: 668px)
+            width: 24px
+            height: 24px
