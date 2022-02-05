@@ -9,3 +9,9 @@
     src: url(./RobotoMono-Regular.ttf);
     font-weight: 400;
 }
+
+@font-face {
+    font-family: 'Roboto Mono';
+    src: url(./RobotoMono-Medium.ttf);
+    font-weight: 500;
+}
