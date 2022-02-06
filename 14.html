@@ -217,30 +217,33 @@
         <div class="timerBlock">
             <p class="caption2">Период активации: 07 февраля - 14 февраля</p>
             <div class="timerBlockInside">
-                <p class="timer">24:28:41</p>
+                <p class="timer">00:00:00</p>
                 <img src="./images/timer-shape.png" alt="" class="">
             </div>
         </div>
 
         <script>
             const TIMER = document.querySelector('p.timer')
-            const countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+            const countDownDate = new Date("February 14 2022 00:00:00 GMT+0300").getTime();
+
+            function getTimeRemaining(distance) {
+                let t = distance,
+                    seconds = Math.floor((t / 1000) % 60),
+                    minutes = Math.floor((t / 1000 / 60) % 60),
+                    hours = Math.floor((t / (1000 * 60 * 60)) % 24),
+                    days = Math.floor(t / (1000 * 60 * 60 * 24));
+                
+                hours = ((days * 24 + hours) < 10) ? "0" + (days * 24 + hours) : (days * 24 + hours)
+
+                return `${hours}:${("0" + minutes).slice(-2)}:${("0" + seconds).slice(-2)}`;
+            }
 
             let x = setInterval(function () {
                 let now = new Date().getTime();
 
                 let distance = countDownDate - now;
 
-                let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                hours = (`${days * 24 + hours}`.length == 1) ? '0' + `${days * 24 + hours}` : `${days * 24 + hours}`
-                minutes = (minutes.length == 1) ? '0' + `${minutes}` : minutes
-                seconds = (seconds.length == 1) ? '0' + `${seconds}` : seconds
-
-                TIMER.innerHTML = (hours) + ":" + minutes + ":" + seconds + "";
+                TIMER.innerHTML = getTimeRemaining(distance)
 
                 if (distance < 0) {
                     clearInterval(x);
