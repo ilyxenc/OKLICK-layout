@@ -35,6 +35,9 @@ body
     overflow-x: hidden !important
     overflow-y: scroll
 
+.bodyBg
+    background: radial-gradient(50% 50% at 50% 50%, #006976 0%, #002E34 67.71%, #000000 100%)
+
 .body
     width: 100%
     overflow: hidden
@@ -149,7 +152,7 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
     top: 0
     left: 0
     margin: 0
-    z-index: -1
+    z-index: -2
     overflow: hidden
 
 @keyframes animStar
@@ -786,7 +789,7 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
         @media only screen and (max-width: 668px)
             font-size: 12px
             line-height: 16px
-            text-shadow: 0px 0px 8px rgba(5, 180, 201, 0.8);
+            text-shadow: 0px 0px 8px rgba(5, 180, 201, 0.8)
 
         &:hover
             opacity: 0.7
@@ -804,3 +807,248 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
         @media only screen and (max-width: 668px)
             width: 24px
             height: 24px
+
+.planetEvent
+    position: absolute
+    top: -5.2vw
+    left: -5.2vw
+    display: flex
+    justify-content: center
+    align-items: center
+    user-select: none
+    z-index: -1
+
+    .planetEvent1
+        box-shadow: 20px 20px 40px 0px #A7246C26
+
+    img
+        &:nth-child(1)
+            position: relative
+            width: 25vw
+            height: 25vw
+            z-index: 2
+            border-radius: 100%
+
+        &:nth-child(2)
+            position: absolute
+            width: 57.55vw
+            height: auto
+            top: -14.5vh
+            left: -13.2vw
+            z-index: 1
+
+.eventTextContentBlock
+    max-width: 58.3vw
+    margin: 0 auto
+    text-align: center
+
+    .eventLogo
+        display: flex
+        justify-content: center
+        align-items: center
+        gap: 1.25vw
+        padding: 5.56vh 0 4.44vh 0
+
+        p
+            font-size: 2.78vh
+            font-weight: 400
+            line-height: 3.7vh
+            letter-spacing: 0.1em
+            text-transform: uppercase
+
+        img
+            height: 3.89vh
+            width: auto
+            display: block
+
+    .caption
+        font-size: 3.33vh
+        font-weight: 700
+        line-height: 3.7vh
+        letter-spacing: 0.1em
+        padding-bottom: 1.48vh
+
+    .text
+        font-size: 1.67vh
+        font-weight: 400
+        line-height: 2.22vh
+        letter-spacing: 0.1em
+
+    .caption2
+        font-size: 2.22vh
+        font-weight: 500
+        line-height: 2.96vh
+        letter-spacing: 0.1em
+
+        span
+            background: #05B4C9
+            padding: 0 6px
+
+    .textShadow
+        text-shadow: 0px 0px 8px rgba(5, 180, 201, 0.8)
+
+.pB16
+    padding-bottom: 1.48vh !important
+
+.pB28
+    padding-bottom: 2.6vh !important
+
+.pB12
+    padding-bottom: 1.11vh !important
+
+.pB20
+    padding-bottom: 1.85vh !important
+
+.eventItems
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    padding: 0 3.125vw
+    gap: 2.08vw
+
+    .eventItem
+        width: 100%
+        background: rgba(0, 0, 0, 0.5)
+        padding: 2.59vh 2.08vw
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        gap: 2.08vw
+
+        img
+            width: 13.54vw
+            height: auto
+            display: block
+
+        .eventItemDescription
+            text-align: left
+
+            .caption
+                font-size: 2.59vh
+                font-weight: 700
+                line-height: 3.43vh
+                letter-spacing: 0.1em
+
+            ul
+                padding-left: 1.04vw
+                box-sizing: border-box
+                width: 100%
+
+                li
+                    font-size: 1.67vh
+                    font-weight: 400
+                    line-height: 2.22vh
+                    letter-spacing: 0.1em
+
+            a
+                font-size: 2.22vh
+                font-weight: 500
+                line-height: 2.96vh
+                letter-spacing: 0.1em
+                text-align: center
+                padding: 1.11vh 1.25vw
+                background: #05B4C9
+                text-decoration: none
+                display: block
+                width: min-content
+
+.steps
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    padding: 0 3.125vw 3.7vh
+    gap: 1.04vw
+
+    .active
+        .task
+            display: block
+
+    .step
+        display: flex
+        justify-content: space-between
+        align-items: center
+        width: 100%
+        box-sizing: border-box
+        background: rgba(255, 255, 255, 0.08)
+        box-shadow: inset 0 0 0 1px #05B4C9, 0px 0px 20px rgba(5, 180, 201, 0.24)
+        border-radius: 1000px
+        padding: 0.55vh 0.55vh 0.55vh 1.67vw
+        min-height: 7.59vh
+        position: relative
+
+        .stepName
+            font-size: 3.33vh
+            font-weight: 700
+            line-height: 3.7vh
+            letter-spacing: 0.1em
+            text-align: left
+            color: #05B4C9
+
+        .arrow
+            display: flex
+            justify-content: center
+            align-items: center
+            background: #A7246C
+            border-radius: 100px
+            width: 3.64vw
+            height: 3.64vw
+
+            img
+                width: 1.25vw
+
+    .task
+        position: absolute
+        padding: 2.6vh 1.67vw
+        background: rgba(0, 0, 0, 0.5)
+        box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.4)
+        backdrop-filter: blur(10px)
+        border-radius: 41px
+        text-align: left
+        bottom: 8.7vh
+        left: 0
+        display: none
+
+        .text
+            font-size: 1.67vh
+            font-weight: 400
+            line-height: 2.22vh
+            letter-spacing: 0.1em
+
+        .description
+            font-size: 0.93vh
+            font-weight: 400
+            line-height: 1.2vh
+            letter-spacing: 0.1em
+            text-align: left
+            opacity: 0.6
+
+.timerBlock
+    text-align: center
+
+    .caption2
+        font-size: 2.22vh
+        font-weight: 500
+        line-height: 2.96vh
+        letter-spacing: 0.1em
+        padding-bottom: 0.74vh
+
+    .timerBlockInside
+        display: flex
+        justify-content: center
+        align-items: center
+
+        .timer
+            position: relative
+            font-size: 5.55vh
+            font-weight: 700
+            line-height: 7.31vh
+            letter-spacing: 0.1em
+            text-shadow: 0px 0px 20px #05B4C9
+            z-index: 2
+
+        img
+            position: absolute
+            z-index: 1
+            height: 9.26vh
+            width: auto
+            display: block
