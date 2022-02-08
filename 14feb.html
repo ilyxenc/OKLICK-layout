@@ -45,23 +45,39 @@
                 <img src="./images/logo.png" alt="">
             </a>
 
-            <p class="caption pB16">
-                Пусть услышат тебя и ты услышишь другого
-            </p>
+            <span class="textMobileButton">О&nbsp;проекте</span>
+            <div class="textMobile">
+                <p class="caption pB16">
+                    Пусть услышат тебя и ты услышишь другого
+                </p>
 
-            <p class="text pB28">
-                Много или мало можно услышать или передать в быстром голосовом своим тиммейтам по&nbsp;команде? А если
-                представить, что в команде с тобой очень близкий и дорогой человек? Что ты скажешь ему за эти доли
-                секунды, что решишь передать для общей победы?
-            </p>
+                <p class="text pB28">
+                    Много или мало можно услышать или передать в быстром голосовом своим тиммейтам по&nbsp;команде? А
+                    если
+                    представить, что в команде с тобой очень близкий и дорогой человек? Что ты скажешь ему за эти доли
+                    секунды, что решишь передать для общей победы?
+                </p>
 
-            <p class="caption pB12">
-                Прими участие в создании NFT токена от ОКЛИК
-            </p>
+                <p class="caption pB12">
+                    Прими участие в создании NFT токена от ОКЛИК
+                </p>
 
-            <p class="caption2 textShadow pB20">
-                <span class="span1">Выиграй</span> набор из 2-х крутых игровых девайсов
-            </p>
+                <p class="caption2 textShadow pB20">
+                    <span class="span1">Выиграй</span> набор из 2-х крутых игровых девайсов
+                </p>
+            </div>
+            <script>
+                const MOBILEBUTTON = document.querySelector('span.textMobileButton')
+                const TEXTBLOCK = document.querySelector('div.textMobile')
+
+                MOBILEBUTTON.addEventListener('click', () => {
+                    if (TEXTBLOCK.style.display === "none" || !TEXTBLOCK.style.display) {
+                        TEXTBLOCK.style.display = "block";
+                    } else {
+                        TEXTBLOCK.style.display = "none";
+                    }
+                })
+            </script>
         </div>
 
         <div class="eventItems pB28">
@@ -78,9 +94,8 @@
                         <li>Кабель с усиленной оплёткой</li>
                     </ul>
 
-                    <a
-                        href="https://www.citilink.ru/product/garnitura-oklick-hs-l930g-snorter-dlya-kompyutera-monitornye-chernyi-s-1192375/?utm_source=merlion_Oklick&utm_medium=referral&utm_term=14feb_land&utm_content=pr_metaverseoklick"
-                    >КУПИТЬ</a>
+                    <a href="https://www.citilink.ru/product/garnitura-oklick-hs-l930g-snorter-dlya-kompyutera-monitornye-chernyi-s-1192375/?utm_source=merlion_Oklick&utm_medium=referral&utm_term=14feb_land&utm_content=pr_metaverseoklick"
+                        target="_blank">КУПИТЬ</a>
                 </div>
             </div>
 
@@ -97,9 +112,8 @@
                         <li>Динамическая RGB-подсветка</li>
                     </ul>
 
-                    <a
-                        href="https://www.citilink.ru/product/mysh-oklik-729g-labyrinth-chernyi-opticheskaya-6400dpi-usb-7but-1465496/?utm_source=merlion_Oklick&utm_medium=referral&utm_term=14feb_land&utm_content=pr_metaverseoklick"
-                    >КУПИТЬ</a>
+                    <a href="https://www.citilink.ru/product/mysh-oklik-729g-labyrinth-chernyi-opticheskaya-6400dpi-usb-7but-1465496/?utm_source=merlion_Oklick&utm_medium=referral&utm_term=14feb_land&utm_content=pr_metaverseoklick"
+                        target="_blank">КУПИТЬ</a>
                 </div>
             </div>
         </div>
@@ -117,7 +131,7 @@
                 <div class="task">
                     <p class="text pB12">
                         Зарегистрируйся в&nbsp;TG:<br />
-                        <a href="https://t.me/metaverse_oklickbot">@metaverse_oklickbot</a>
+                        <a href="https://t.me/metaverse_oklickbot" target="_blank">@metaverse_oklickbot</a>
                     </p>
                 </div>
             </div>
@@ -187,7 +201,7 @@
                 <div class="task">
                     <p class="text pB12">
                         Начать:<br />
-                        <a href="https://t.me/metaverse_oklickbot">@metaverse_oklickbot</a>
+                        <a href="https://t.me/metaverse_oklickbot" target="_blank">@metaverse_oklickbot</a>
                     </p>
                 </div>
             </div>
@@ -259,14 +273,14 @@
                 <div>
                     <a href="./files/Правила Конкурса Оклик __ 0702.pdf">Правила</a>
                     <a href="./">Главная</a>
-                    <a href="https://oklick.ru">Оклик</a>
-                    <a href="https://oklick.ru/about/contacts/">Контакты</a>
+                    <a href="https://oklick.ru" target="_blank">Оклик</a>
+                    <a href="https://oklick.ru/about/contacts/" target="_blank">Контакты</a>
                 </div>
                 <div>
-                    <a href="https://www.instagram.com/oklick.official/">
+                    <a href="https://www.instagram.com/oklick.official/" target="_blank">
                         <img src="./images/icon/i.png" alt="">
                     </a>
-                    <a href="https://vk.com/oklick_official">
+                    <a href="https://vk.com/oklick_official" target="_blank">
                         <img src="./images/icon/v.png" alt="">
                     </a>
                 </div>

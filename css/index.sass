@@ -734,6 +734,12 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
         -webkit-transform: translateZ(0)
         transform: translateZ(0)
 
+@keyframes fadeIn
+    from
+        opacity: 0
+    to
+        opacity: 1
+
 .footerMain
     position: absolute
     bottom: 0
@@ -856,7 +862,7 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
             @media only screen and (max-width: 868px)
                 width: 125vw
                 height: auto
-            
+
             @media only screen and (max-width: 668px)
                 width: 210vw
                 height: auto
@@ -868,7 +874,7 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
 
     @media only screen and (max-width: 868px)
         max-width: 480px
-    
+
     @media only screen and (max-width: 668px)
         max-width: 100%
         width: 100%
@@ -888,7 +894,7 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
 
         @media only screen and (max-width: 868px)
             padding: 45px 0
-        
+
         @media only screen and (max-width: 668px)
             padding: 32px 0
 
@@ -902,7 +908,7 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
             @media only screen and (max-width: 868px)
                 font-size: 28px
                 line-height: 37px
-            
+
             @media only screen and (max-width: 668px)
                 font-size: 18px
                 line-height: 24px
@@ -956,7 +962,7 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
         @media only screen and (max-width: 868px)
             font-size: 20px
             line-height: 26px
-        
+
         @media only screen and (max-width: 668px)
             font-size: 18px
             line-height: 24px
@@ -973,7 +979,7 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
 
     @media only screen and (max-width: 868px)
         padding-bottom: 16px !important
-    
+
     @media only screen and (max-width: 668px)
         padding-bottom: 16px !important
 
@@ -982,7 +988,7 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
 
     @media only screen and (max-width: 868px)
         padding-bottom: 28px !important
-    
+
     @media only screen and (max-width: 668px)
         padding-bottom: 28px !important
 
@@ -991,7 +997,7 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
 
     @media only screen and (max-width: 868px)
         padding-bottom: 12px !important
-    
+
     @media only screen and (max-width: 668px)
         padding-bottom: 12px !important
 
@@ -1000,7 +1006,7 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
 
     @media only screen and (max-width: 868px)
         padding-bottom: 20px !important
-    
+
     @media only screen and (max-width: 668px)
         padding-bottom: 20px !important
 
@@ -1014,7 +1020,7 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
     @media only screen and (max-width: 868px)
         padding: 0 20px
         gap: 16px
-    
+
     @media only screen and (max-width: 668px)
         padding: 0 10px
         flex-direction: column
@@ -1034,7 +1040,7 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
             padding: 40px 20px
             gap: 28px
             flex-direction: column
-        
+
         @media only screen and (max-width: 668px)
             padding: 32px 16px
 
@@ -1062,7 +1068,7 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
                 @media only screen and (max-width: 868px)
                     font-size: 22px
                     line-height: 29px
-                
+
                 @media only screen and (max-width: 668px)
                     font-size: 18px
                     line-height: 24px
@@ -1075,7 +1081,7 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
                 @media only screen and (max-width: 868px)
                     padding-left: 20px
                     min-height: 133px
-                
+
                 @media only screen and (max-width: 668px)
                     padding-left: 15px
                     min-height: unset
@@ -1089,7 +1095,7 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
                     @media only screen and (max-width: 868px)
                         font-size: 16px
                         line-height: 21px
-                    
+
                     @media only screen and (max-width: 668px)
                         font-size: 10px
                         line-height: 13px
@@ -1113,10 +1119,36 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
                     padding: 12px 24px
                     font-size: 20px
                     line-height: 26px
-                
+
                 @media only screen and (max-width: 668px)
                     font-size: 18px
                     line-height: 24px
+
+.textMobileButton
+    font-size: 2.22vh
+    font-weight: 500
+    line-height: 2.96vh
+    letter-spacing: 0.1em
+    text-align: center
+    padding: 1.11vh 1.25vw
+    background: #05B4C9
+    text-decoration: none
+    display: none
+    width: min-content
+    user-select: none
+    outline: none
+    -webkit-tap-highlight-color: transparent
+    margin: 0 auto 16px
+
+    @media only screen and (max-width: 868px)
+        padding: 12px 24px
+        font-size: 20px
+        line-height: 26px
+
+    @media only screen and (max-width: 668px)
+        font-size: 18px
+        line-height: 24px
+        display: block
 
 .steps
     display: flex
@@ -1129,7 +1161,7 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
     @media only screen and (max-width: 868px)
         padding: 0 20px 40px
         gap: 12px
-    
+
     @media only screen and (max-width: 668px)
         padding: 0 10px 40px
         gap: 8px
@@ -1159,7 +1191,7 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
             flex-direction: column
             gap: 16px
             position: static
-        
+
         @media only screen and (max-width: 668px)
             flex-direction: row
             gap: unset
@@ -1187,7 +1219,7 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
             border-radius: 100px
             width: 3.64vw
             height: 3.64vw
-            
+
             @media only screen and (max-width: 868px)
                 width: 100%
                 height: 51px
@@ -1221,6 +1253,8 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
         left: 0
         display: none
         z-index: 3
+        box-shadow: inset 0 0 0 1px #05b4c9
+        animation: fadeIn 0.3s ease-in-out
 
         @media only screen and (max-width: 868px)
             bottom: unset
@@ -1250,6 +1284,11 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
             text-align: left
             opacity: 0.6
 
+@media only screen and (max-width: 668px)
+    .textMobile
+        display: none
+        animation: fadeIn 0.3s ease-in-out
+
 .timerBlock
     text-align: center
 
@@ -1276,7 +1315,7 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
             font-size: 20px
             line-height: 26px
             padding-bottom: 8px
-        
+
         @media only screen and (max-width: 668px)
             font-size: 18px
             line-height: 24px
@@ -1298,7 +1337,7 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
             @media only screen and (max-width: 868px)
                 font-size: 48px
                 line-height: 63px
-            
+
             @media only screen and (max-width: 668px)
                 font-size: 40px
                 line-height: 53px
@@ -1313,7 +1352,7 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
             @media only screen and (max-width: 868px)
                 height: 16px
                 width: 651px
-            
+
             @media only screen and (max-width: 668px)
                 height: 12px
                 width: 460px
