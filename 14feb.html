@@ -41,25 +41,38 @@
     <div class="body">
 
         <div class="eventTextContentBlock">
-            <a class="eventLogo" href="./">
-                <p>Метавселенная</p>
-                <img src="./images/logo.png" alt="">
-            </a>
-
-            <span class="textMobileButton">О&nbsp;проекте</span>
+            <div class="backAboutBlock">
+                <a href="./" class="backAboutBlockInside">
+                    <img src="./images/back.png" alt="">
+                    <p>Назад</p>
+                </a>
+                <div class="backAboutBlockInside textMobileButton">
+                    <p>О&nbsp;проекте</p>
+                    <img src="./images/info.png" alt="">
+                </div>
+            </div>
 
             <div class="textMobile">
+                <div class="cancelBlock">
+                    <p>О&nbsp;проекте</p>
+                    <img src="./images/cancel.png" alt="">
+                </div>
                 <p class="caption pB16">
                     Пусть услышат тебя и ты услышишь другого
                 </p>
 
-                <p class="text pB28">
+                <p class="text">
                     Много или мало можно услышать или передать в быстром голосовом своим тиммейтам по&nbsp;команде? А
                     если
                     представить, что в команде с тобой очень близкий и дорогой человек? Что ты скажешь ему за эти доли
                     секунды, что решишь передать для общей победы?
                 </p>
             </div>
+
+            <a class="eventLogo" href="./">
+                <p>Метавселенная</p>
+                <img src="./images/logo.png" alt="">
+            </a>
 
             <p class="caption pB12">
                 Прими участие в создании NFT токена от ОКЛИК
@@ -69,8 +82,9 @@
                 <span class="span1">Выиграй</span> набор из 2-х крутых игровых девайсов
             </p>
             <script>
-                const MOBILEBUTTON = document.querySelector('span.textMobileButton')
-                const TEXTBLOCK = document.querySelector('div.textMobile')
+                const MOBILEBUTTON = document.querySelector('.textMobileButton')
+                const CANCEL = document.querySelector('.cancelBlock')
+                const TEXTBLOCK = document.querySelector('.textMobile')
 
                 MOBILEBUTTON.addEventListener('click', () => {
                     if (TEXTBLOCK.style.display === "none" || !TEXTBLOCK.style.display) {
@@ -79,6 +93,51 @@
                         TEXTBLOCK.style.display = "none";
                     }
                 })
+
+                CANCEL.addEventListener('click', () => {
+                    if (TEXTBLOCK.style.display === "none" || !TEXTBLOCK.style.display) {
+                        TEXTBLOCK.style.display = "block";
+                    } else {
+                        TEXTBLOCK.style.display = "none";
+                    }
+                })
+            </script>
+
+            <div class="timerBlock">
+                <p class="caption2">До конца первого этапа осталось:</p>
+                <div class="timerBlockInside">
+                    <p class="timer">00:00:00:00</p>
+                    <img src="./images/timer-shape.png" alt="" class="">
+                </div>
+            </div>
+
+            <script>
+                const TIMER = document.querySelector('p.timer')
+                const countDownDate = new Date("February 14 2022 00:00:00 GMT+0300").getTime();
+
+                function getTimeRemaining(distance) {
+                    let t = distance,
+                        seconds = Math.floor((t / 1000) % 60),
+                        minutes = Math.floor((t / 1000 / 60) % 60),
+                        hours = Math.floor((t / (1000 * 60 * 60)) % 24),
+                        days = Math.floor(t / (1000 * 60 * 60 * 24));
+
+                    return `${("0" + days).slice(-2)}:${("0" + hours).slice(-2)}:${("0" + minutes).slice(-2)}:${("0" + seconds).slice(-2)}`;
+                }
+
+                let x = setInterval(function () {
+                    let now = new Date().getTime();
+
+                    let distance = countDownDate - now;
+
+                    TIMER.innerHTML = getTimeRemaining(distance)
+
+                    if (distance < 0) {
+                        clearInterval(x);
+                        TIMER.innerHTML = "00:00:00";
+                    }
+                }, 1000);
+
             </script>
         </div>
 
@@ -99,7 +158,7 @@
                         <li>Кабель с усиленной оплёткой</li>
                     </ul>
 
-                    <a href="https://www.citilink.ru/product/garnitura-oklick-hs-l930g-snorter-dlya-kompyutera-monitornye-chernyi-s-1192375/?utm_source=merlion_Oklick&utm_medium=referral&utm_term=14feb_land&utm_content=pr_metaverseoklick"
+                    <a href="https://www.citilink.ru/product/garnitura-oklick-hs-l930g-snorter-dlya-kompyutera-monitornye-chernyi-s-1192375/?utm_source=merlion_Oklick&utm_medium=referral&utm_campaign=14feb_land&utm_term=14feb_land&utm_content=pr_metaverseoklick"
                         target="_blank">КУПИТЬ</a>
                 </div>
             </div>
@@ -120,7 +179,7 @@
                         <li>Динамическая RGB-подсветка</li>
                     </ul>
 
-                    <a href="https://www.citilink.ru/product/mysh-oklik-729g-labyrinth-chernyi-opticheskaya-6400dpi-usb-7but-1465496/?utm_source=merlion_Oklick&utm_medium=referral&utm_term=14feb_land&utm_content=pr_metaverseoklick"
+                    <a href="https://www.citilink.ru/product/mysh-oklik-729g-labyrinth-chernyi-opticheskaya-6400dpi-usb-7but-1465496/?utm_source=merlion_Oklick&utm_medium=referral&utm_campaign=14feb_land&utm_term=14feb_land&utm_content=pr_metaverseoklick"
                         target="_blank">КУПИТЬ</a>
                 </div>
             </div>
@@ -171,7 +230,8 @@
 
                 <div class="task">
                     <p class="text pB12">
-                        Запиши в бота 3-5 секундное голосовое сообщение с тем, что считаешь самым важным на День всех влюблённых
+                        Запиши в бота 3-5 секундное голосовое сообщение с тем, что считаешь самым важным на День всех
+                        влюблённых
                     </p>
                 </div>
             </div>
@@ -229,45 +289,6 @@
             STEPS.forEach(step => {
                 step.addEventListener('click', toggleClass)
             });
-        </script>
-
-        <div class="timerBlock">
-            <p class="caption2">До конца первого этапа осталось:</p>
-            <div class="timerBlockInside">
-                <p class="timer">00:00:00</p>
-                <img src="./images/timer-shape.png" alt="" class="">
-            </div>
-        </div>
-
-        <script>
-            const TIMER = document.querySelector('p.timer')
-            const countDownDate = new Date("February 14 2022 00:00:00 GMT+0300").getTime();
-
-            function getTimeRemaining(distance) {
-                let t = distance,
-                    seconds = Math.floor((t / 1000) % 60),
-                    minutes = Math.floor((t / 1000 / 60) % 60),
-                    hours = Math.floor((t / (1000 * 60 * 60)) % 24),
-                    days = Math.floor(t / (1000 * 60 * 60 * 24));
-
-                hours = ((days * 24 + hours) < 10) ? "0" + (days * 24 + hours) : (days * 24 + hours)
-
-                return `${hours}:${("0" + minutes).slice(-2)}:${("0" + seconds).slice(-2)}`;
-            }
-
-            let x = setInterval(function () {
-                let now = new Date().getTime();
-
-                let distance = countDownDate - now;
-
-                TIMER.innerHTML = getTimeRemaining(distance)
-
-                if (distance < 0) {
-                    clearInterval(x);
-                    TIMER.innerHTML = "00:00:00";
-                }
-            }, 1000);
-
         </script>
 
         <div class="footer footerMain">

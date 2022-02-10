@@ -369,6 +369,12 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
                 color: #05B4C9
                 padding-bottom: 12px
 
+                span
+                    font-size: 14px
+                    line-height: 18px
+                    padding: 0 4px
+                    display: block
+
             &:nth-child(2)
                 font-size: 14px
                 font-weight: 400
@@ -473,6 +479,9 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
         p
             text-align: right !important
 
+        span
+            background: #D886FF
+
         div
             left: 140px
             top: 29px
@@ -568,6 +577,9 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
             right: -110px
             top: 2vw
 
+        span
+            background: #E49739
+
         div
             left: -23%
             top: 50%
@@ -624,9 +636,10 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
         width: 46.3vw
         height: 37.3vw
         transition: 0.3s
+        animation: flicker 3.5s infinite
 
         @media only screen and (max-width: 668px)
-            width: 528px
+            width: 378px
             height: auto
 
     .planetImgBg2
@@ -654,10 +667,35 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
             right: -112px
             bottom: -0.1vw
 
+        span
+            background: #A7246C
+
         div
             left: -31%
             top: 5%
             transform: rotate(18deg)
+
+@keyframes flicker
+    0%
+        opacity: 1
+        right: -90%
+        bottom: -70%
+    25%
+        opacity: 0
+        right: 0%
+        bottom: 0%
+    50%
+        opacity: 1
+        right: -90%
+        bottom: -70%
+    75%
+        opacity: 0
+        right: 0%
+        bottom: 0%
+    100%
+        opacity: 1
+        right: -90%
+        bottom: -70%
 
 @keyframes planet3
     from
@@ -868,9 +906,11 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
                 height: auto
 
 .eventTextContentBlock
-    max-width: 58.3vw
+    max-width: 100%
+    padding: 0 60px
     margin: 0 auto
     text-align: center
+    box-sizing: border-box
 
     @media only screen and (max-width: 868px)
         max-width: 480px
@@ -1139,32 +1179,6 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
                     font-size: 18px
                     line-height: 24px
 
-.textMobileButton
-    font-size: 2.22vh
-    font-weight: 500
-    line-height: 2.96vh
-    letter-spacing: 0.1em
-    text-align: center
-    padding: 1.11vh 1.25vw
-    background: #05B4C9
-    text-decoration: none
-    display: none
-    width: min-content
-    user-select: none
-    outline: none
-    -webkit-tap-highlight-color: transparent
-    margin: 0 auto 16px
-
-    @media only screen and (max-width: 868px)
-        padding: 12px 24px
-        font-size: 20px
-        line-height: 26px
-
-    @media only screen and (max-width: 668px)
-        font-size: 18px
-        line-height: 24px
-        display: block
-
 .steps
     display: flex
     justify-content: space-between
@@ -1225,7 +1239,7 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
             @media only screen and (max-width: 868px)
                 font-size: 20px
                 line-height: 20px
-            
+
             @media only screen and (max-width: 668px)
                 font-size: 22px
                 line-height: 24px
@@ -1268,7 +1282,7 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
         backdrop-filter: blur(10px)
         border-radius: 41px
         text-align: left
-        bottom: 8.7vh
+        top: 8.7vh
         left: 0
         display: none
         z-index: 3
@@ -1303,13 +1317,9 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
             text-align: left
             opacity: 0.6
 
-@media only screen and (max-width: 668px)
-    .textMobile
-        display: none
-        animation: fadeIn 0.3s ease-in-out
-
 .timerBlock
     text-align: center
+    padding: 5.55vh 0
 
     .br
         display: none
@@ -1375,3 +1385,99 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
             @media only screen and (max-width: 668px)
                 height: 12px
                 width: 460px
+
+.backAboutBlock
+    position: absolute
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-wrap: nowrap
+    gap: 60px
+    right: 5.55vh
+    top: 5.56vh
+
+    @media only screen and (max-width: 868px)
+        position: relative
+        right: unset
+        top: unset
+        padding: 45px 0 0
+    
+    @media only screen and (max-width: 668px)
+        padding: 32px 0 0
+
+    .backAboutBlockInside
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-wrap: nowrap
+        gap: 12px
+        transition: 0.3s
+        text-decoration: none
+        cursor: pointer
+
+        &:hover
+            opacity: 0.7
+
+        p
+            font-size: 1.67vh
+            font-weight: 400
+            line-height: 2.22vh
+            letter-spacing: 0.1em
+        
+        img 
+            width: 2.22vh
+            height: 2.22vh
+
+.cancelBlock
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    flex-wrap: nowrap
+    gap: 12px
+    transition: 0.3s
+    text-decoration: none
+    cursor: pointer
+    margin-bottom: 7.41vh
+
+    @media only screen and (max-width: 868px)
+        margin-bottom: 45px
+        justify-content: center
+
+    @media only screen and (max-width: 668px)
+        margin-bottom: 32px
+
+    &:hover
+        opacity: 0.7
+
+    p
+        font-size: 1.67vh
+        font-weight: 400
+        line-height: 2.22vh
+        letter-spacing: 0.1em
+    
+    img 
+        width: 2.22vh
+        height: 2.22vh
+
+.textMobile
+    display: none
+    animation: fadeIn 0.3s ease-in-out
+    position: absolute
+    right: 0
+    top: 0
+    background: rgba(0, 0, 0, 0.8)
+    padding: 5.55vh
+    box-sizing: border-box
+    height: 100vh
+    max-width: 31.25vw
+    z-index: 10
+    text-align: left
+
+    @media only screen and (max-width: 868px)
+        max-width: 100%
+        width: 100%
+        height: auto
+        padding: 45px 20px
+
+    @media only screen and (max-width: 668px)
+        padding: 32px 10px
