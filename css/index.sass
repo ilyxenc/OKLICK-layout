@@ -1071,6 +1071,27 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
     @media only screen and (max-width: 668px)
         padding-bottom: 20px !important
 
+.arrowBottom
+    display: none
+    width: 80px
+    height: auto
+    border-radius: 100px
+    position: fixed
+    bottom: 16px
+    left: 0
+    right: 0
+    margin: 0 auto
+    z-index: 5
+
+    @media only screen and (max-width: 668px)
+        display: block
+
+.arrowBottom8
+    box-shadow: 0px 4px 16px rgba(216, 134, 255, 0.4)
+
+.arrowBottom23
+    box-shadow: 0px 4px 16px rgba(228, 151, 57, 0.4)
+
 .eventItems
     display: flex
     justify-content: space-between
@@ -1111,26 +1132,6 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
             align-items: center
             flex-wrap: nowrap
             position: relative
-
-            .arrowBottom
-                display: none
-                width: 80px
-                height: auto
-                border-radius: 100px
-                position: absolute
-                top: 32px
-                left: 0
-                right: 0
-                margin: 0 auto
-
-                @media only screen and (max-width: 668px)
-                    display: block
-
-            .arrowBottom8
-                box-shadow: 0px 4px 16px rgba(216, 134, 255, 0.4)
-
-            .arrowBottom23
-                box-shadow: 0px 4px 16px rgba(228, 151, 57, 0.4)
 
         img
             width: 13.54vw
