@@ -40,6 +40,18 @@
     <!-- End Google Tag Manager (noscript) -->
     <div class="body">
         <img src="./images/down8.png" alt="" class="arrowBottom arrowBottom8">
+        <script>
+            const ARROWBOTTOM = document.querySelector('.arrowBottom');
+            const ACTIVECLASS = 'hidden'
+
+            document.addEventListener('scroll', () => {
+                if ((window.innerHeight - window.scrollY) > 150) {
+                    ARROWBOTTOM.classList.remove(ACTIVECLASS);
+                } else {
+                    ARROWBOTTOM.classList.add(ACTIVECLASS);
+                }
+            });
+        </script>
 
         <div class="eventTextContentBlock">
             <div class="backAboutBlock">
@@ -169,7 +181,7 @@
 
             <div class="eventItem">
                 <div class="eventItemImgs">
-                    <img src="./images/items/keyboard.png" alt="">
+                    <img class="imgKeyboard" src="./images/items/keyboard.png" alt="">
                 </div>
 
 
@@ -250,7 +262,7 @@
 
                 <div class="task">
                     <p class="text pB12">
-                        Получи шанс выиграть в подарок стильную гарнитуру и игровую мышку от OKLICK
+                        Получи шанс выиграть в подарок стильную гарнитуру и клавиатуру от OKLICK
                     </p>
                 </div>
             </div>

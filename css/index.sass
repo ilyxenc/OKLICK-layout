@@ -1092,6 +1092,16 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
 .arrowBottom23
     box-shadow: 0px 4px 16px rgba(228, 151, 57, 0.4)
 
+.hidden
+    animation: hide 0.3s forwards
+
+@keyframes hide
+    from
+        opacity: 1
+    
+    to
+      opacity: 0  
+
 .eventItems
     display: flex
     justify-content: space-between
@@ -1154,6 +1164,10 @@ $shadows-big-mobile: multiple-box-shadow-mobile(100)
 
                 &:nth-child(2)
                     display: block
+
+        @media only screen and (max-width: 668px)
+            .imgKeyboard
+                width: auto !important
 
         .eventItemDescription
             text-align: left
