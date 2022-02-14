@@ -42,13 +42,13 @@
         <img src="./images/down8.png" alt="" class="arrowBottom arrowBottom8">
         <script>
             const ARROWBOTTOM = document.querySelector('.arrowBottom');
-            const ACTIVECLASS = 'hidden'
+            const ARROWBOTTOMACTIVECLASS = 'hidden'
 
             document.addEventListener('scroll', () => {
                 if ((window.innerHeight - window.scrollY) > 150) {
-                    ARROWBOTTOM.classList.remove(ACTIVECLASS);
+                    ARROWBOTTOM.classList.remove(ARROWBOTTOMACTIVECLASS);
                 } else {
-                    ARROWBOTTOM.classList.add(ACTIVECLASS);
+                    ARROWBOTTOM.classList.add(ARROWBOTTOMACTIVECLASS);
                 }
             });
         </script>
